@@ -34,7 +34,7 @@ main {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     color: var(--app-white);
     letter-spacing: 1px;
@@ -42,7 +42,7 @@ h1 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     color: var(--app-white);
     letter-spacing: 0.4px;
@@ -53,14 +53,15 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 5px;
-    margin-bottom: 5px; 
+    margin-bottom: 6px; 
+    gap: 6px;
 }
 
 select {
     flex: 1;
-    height: 40px;
-    width: 150px;
+    font-size: 12px;
+    height: 30px;
+    width: 124px;
     border-radius: 5px;
     background-color: var(--app-medium-gray);
     color: var(--app-white);
@@ -70,8 +71,9 @@ select {
 
 .create {
     flex: 0 0 auto;
-    height: 40px;
-    width: 150px;
+    font-size: 12px;
+    height: 30px;
+    width: 124px;
     background-color: #ff8800;
     color: #ffffff;
     border: none;

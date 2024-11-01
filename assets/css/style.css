@@ -4,12 +4,13 @@
     --app-dark-gray: #141414;
     --app-medium-gray: #2d2d2d;
     --app-white: #fff;
+    --app-dimension: 385px;
 }
   
-html {
-    min-width: 100%;
-}
-  
+/* ------------------------------ */
+/*         General Rules          */
+/* ------------------------------ */
+
 body {
     font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif;
     font-weight: 400;
@@ -27,6 +28,10 @@ main {
     width: min(100% - 30px, 1080px);
     margin-inline: auto;
 }
+
+/* ------------------------------ */
+/*         Shape Factory          */
+/* ------------------------------ */
 
 .flex {
     min-height: 100vh;
@@ -62,18 +67,19 @@ p {
 
 select {
     flex: 1;
+    background-color: var(--app-medium-gray);
+    color: var(--app-white);    
     font-size: 12px;
     height: 30px;
     width: 124px;
     border-radius: 5px;
-    background-color: var(--app-medium-gray);
-    color: var(--app-white);
     padding: 4px 0  6px  10px;
     box-sizing: border-box;
 }
 
 .create {
     flex: 0 0 auto;
+    transition: background-color 0.3s ease;
     font-size: 12px;
     height: 30px;
     width: 124px;
@@ -82,7 +88,6 @@ select {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .create:hover {
@@ -90,9 +95,9 @@ select {
 }
 
 .container-shapes {
-    width: 385px;
-    height: 385px;
     background-color: var(--app-medium-gray);
+    width: var(--app-dimension);
+    height: var(--app-dimension);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -100,15 +105,15 @@ select {
 }
 
 .shapes {
-    max-width: 385px;
-    max-height: 385px;
-    margin-top: auto; 
-    margin-left: 10px;
     align-self: left;
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: flex-start;
-    align-items: flex-end;    
+    align-items: flex-end;       
+    max-width: var(--app-dimension);
+    max-height: var(--app-dimension);
+    margin-top: auto; 
+    margin-left: 10px; 
 }
 
 .circle {

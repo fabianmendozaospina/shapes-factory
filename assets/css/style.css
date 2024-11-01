@@ -3,8 +3,10 @@
 :root {
     --app-dark-gray: #141414;
     --app-medium-gray: #2d2d2d;
-    --app-white: #fff;
-    --app-dimension: 385px;
+    --app-white-color: #fff;
+    --app-dimension: 65px;
+    --app-border-radius: 5px;
+    
 }
   
 /* ------------------------------ */
@@ -12,7 +14,7 @@
 /* ------------------------------ */
 
 body {
-    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif;
+    font-family: 'Poppins', 'Open Sans', sans-serif;
     font-weight: 400;
     line-height: 1.5;
     text-rendering: geometricPrecision;
@@ -44,35 +46,27 @@ main {
 h1 {
     font-size: 22px;
     font-weight: 400;
-    color: var(--app-white);
     letter-spacing: 1px;
-    line-height: 2;
+    color: var(--app-white-color);
+    margin-bottom: 10px;
 }
 
 p {
     font-size: 12px;
     font-weight: 400;
-    color: var(--app-white);
+    color: var(--app-white-color);
     letter-spacing: 0.4px;
     line-height: 2;
-}
-
-.container-options {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 6px; 
-    gap: 6px;
 }
 
 select {
     flex: 1;
     background-color: var(--app-medium-gray);
-    color: var(--app-white);    
+    color: var(--app-white-color);    
     font-size: 12px;
     height: 30px;
-    width: 124px;
-    border-radius: 5px;
+    width: 137px;
+    border-radius: var(--app-border-radius);
     padding: 4px 0  6px  10px;
     box-sizing: border-box;
 }
@@ -82,11 +76,11 @@ select {
     transition: background-color 0.3s ease;
     font-size: 12px;
     height: 30px;
-    width: 124px;
+    width: 90px;
     background-color: #ff8800;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--app-border-radius);
     cursor: pointer;
 }
 
@@ -94,14 +88,39 @@ select {
     background-color: #ffaa00;
 }
 
-.container-shapes {
-    background-color: var(--app-medium-gray);
+.circle {
     width: var(--app-dimension);
     height: var(--app-dimension);
+    margin: 0 10px 10px 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.square {
+    width: var(--app-dimension);
+    height: var(--app-dimension);
+    margin: 0 10px 10px 0;
+    border-radius: var(--app-border-radius);
+    cursor: pointer;
+}
+
+.container-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px; 
+    gap: 10px;
+}
+
+.container-shapes {
+    background-color: var(--app-medium-gray);
+    width: 385px;
+    height: 385px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border-radius: 5px;
+    border-radius: var(--app-border-radius);
+    margin-top: 5px;
 }
 
 .shapes {
@@ -110,24 +129,6 @@ select {
     flex-wrap: wrap-reverse;
     justify-content: flex-start;
     align-items: flex-end;       
-    max-width: var(--app-dimension);
-    max-height: var(--app-dimension);
     margin-top: auto; 
     margin-left: 10px; 
-}
-
-.circle {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    margin: 0 10px 10px 0;
-    cursor: pointer;
-}
-
-.square {
-    width: 65px;
-    height: 65px;
-    border-radius: 0; 
-    margin: 0 10px 10px 0;
-    cursor: pointer;
 }

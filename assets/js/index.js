@@ -8,7 +8,7 @@ const output = select('.output');
 const info = select('.info');
 const shapes = [];
 const CAPACITY = 30;
-const colorMap = { // Added to map the colors
+const colorMap = {
     "#09f": "Blue",
     "#9f0": "Green",
     "#f90": "Orange",
@@ -20,7 +20,7 @@ class Shape {
     constructor(index, name, color) {
         this._index = index;
         this._name = name;
-        this._color = color  = colorMap[color] || color; // Map hexadecimal to color name
+        this._color = color  = colorMap[color] || color;
     }
  
     get index() {
@@ -28,7 +28,7 @@ class Shape {
     }
 
     get color() {
-        return this._color; // chenged de order:  color - name
+        return this._color;
     }
 
     get name() {
@@ -37,8 +37,7 @@ class Shape {
   
     getInfo() {
         return `Unit ${this._index + 1}: ${this._color} ${this._name} `;
-    } //Changed the position to index - color - name (like pdf model)
-      // added  + 1 at index
+    } 
 }
 
 function select(selector, scope = document) {
@@ -56,7 +55,7 @@ listen('click', generateBtn, () => {
 function generateShape() {
     const shapeName = shape.value;
     const colorName = color.value;
-    const index = shapes.length;// == 0 ? 0 : shapes.length - 1;
+    const index = shapes.length;
     
     const newShape = new Shape(index, shapeName, colorName);
     const shapeDiv = document.createElement('div');
@@ -64,20 +63,15 @@ function generateShape() {
     shapes.push(newShape);
     shapeDiv.className = `shape ${shapeName}`;
     shapeDiv.style.backgroundColor = colorName;
-    shapeDiv.dataset.index = index; // Adiciona um atributo de dados
-    shapeDiv.dataset.name = shapeName; // Adiciona um atributo de dados
-    shapeDiv.dataset.color = colorName;// Adiciona um atributo de dados
+    shapeDiv.dataset.index = index; 
+    shapeDiv.dataset.name = shapeName; 
+    shapeDiv.dataset.color = colorName;
     output.appendChild(shapeDiv);
-
 
     shapeDiv.addEventListener('click', () => {
         info.textContent = newShape.getInfo();
     });
-/*
-    newShape.addEventListener('click', () => {
-        info.textContent = newShape.getInfo();
-    });
-*/
+
     checkCapacity();
 }
 

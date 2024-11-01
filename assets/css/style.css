@@ -48,7 +48,7 @@ h1 {
     font-weight: 400;
     letter-spacing: 1px;
     color: var(--app-white-color);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 p {
@@ -60,7 +60,6 @@ p {
 }
 
 select {
-    flex: 1;
     background-color: var(--app-medium-gray);
     color: var(--app-white-color);    
     font-size: 12px;

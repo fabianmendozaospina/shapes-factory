@@ -17,36 +17,34 @@
     </head>
     <body>
         <main>
-            <div class="center flex">
-                <div class="container flex">
-                    <div>
-                        <h1>Shape Factory</h1>
+            <div class="container flex">
+                <div>
+                    <h1>Shape Factory</h1>
+                </div>
+                <div class="container-options">
+                    <select class="shape">
+                        <option value="" selected="" disabled="" hidden="">Shape</option>
+                        <option value="circle">Circle</option>
+                        <option value="square">Square</option>
+                    </select>
+                    <select class="color">
+                        <option value="" selected="" disabled="" hidden="">Color</option>
+                        <option value="#09f">Blue</option>
+                        <option value="#9f0">Green</option>
+                        <option value="#f90">Orange</option>
+                        <option value="#f09">Pink</option>
+                        <option value="#90f">Purple</option>
+                    </select>
+                    <input class="create" type="button" value="Create">
+                </div>
+                <div class="container-shapes">
+                    <div class="shapes">
                     </div>
-                    <div class="container-options">
-                        <select class="shape">
-                            <option value="" selected="" disabled="" hidden="">Shape</option>
-                            <option value="circle">Circle</option>
-                            <option value="square">Square</option>
-                        </select>
-                        <select class="color">
-                            <option value="" selected="" disabled="" hidden="">Color</option>
-                            <option value="#09f">Blue</option>
-                            <option value="#9f0">Green</option>
-                            <option value="#f90">Orange</option>
-                            <option value="#f09">Pink</option>
-                            <option value="#90f">Purple</option>
-                        </select>
-                        <input class="create" type="button" value="Create">
-                    </div>
-                    <div class="container-shapes">
-                        <div class="shapes">
-                        </div>
-                    </div>
-                    <div>
-                        <p class="message"></p>
-                    </div>
-                </div>    
-            </div>
+                </div>
+                <div>
+                    <p class="message"></p>
+                </div>
+            </div>    
         </main>        
     </body>
 </html>

@@ -4,10 +4,10 @@ const CAPACITY = 25;
 const CONTAINER_FULL = 'Sorry, the container is full. Please, refresh the page to empty it again.';
 const CONTAINER_EMPTY = 'Please, choose the shape and color to put it in the container.';
 
-const shape = select('.shape');
-const color = select('.color');
+const shapeObj = select('.shape');
+const colorObj = select('.color');
 const generateObj = select('.create');
-const shapesObj = select('.shapes');
+const shapesListObj = select('.shapes');
 const messageObj = select('.message');
 const shapes = [];
 const colorMap = {
@@ -55,8 +55,8 @@ listen('click', generateObj, () => {
 });
 
 function generateShape() {
-    const shapeName = shape.value;
-    const colorName = color.value;
+    const shapeName = shapeObj.value;
+    const colorName = colorObj.value;
 
     if (shapeName.toString().trim() === '' || colorName.toString().trim() === '') {
         messageObj.textContent = CONTAINER_EMPTY;
@@ -73,7 +73,7 @@ function generateShape() {
     shapeDiv.dataset.index = index; 
     shapeDiv.dataset.name = shapeName; 
     shapeDiv.dataset.color = colorName;
-    shapesObj.appendChild(shapeDiv);
+    shapesListObj.appendChild(shapeDiv);
 
     listen('click', shapeDiv, () => {
         messageObj.textContent = newShape.getInfo();

@@ -9,7 +9,7 @@ const color = select('.color');
 const generateObj = select('.create');
 const disableObj = select('.disable-btn');
 const shapesObj = select('.shapes');
-const infoObj = select('.info');
+const messageObj = select('.message');
 const shapes = [];
 const colorMap = {
     "#09f": "Blue",
@@ -59,8 +59,8 @@ function generateShape() {
     const shapeName = shape.value;
     const colorName = color.value;
 
-    if (shapeName.toString().trim() === '' && colorName.toString().trim() === '') {
-        infoObj.textContent = CONTAINER_EMPTY;
+    if (shapeName.toString().trim() === '' || colorName.toString().trim() === '') {
+        messageObj.textContent = CONTAINER_EMPTY;
         return;
     }
 
@@ -69,7 +69,7 @@ function generateShape() {
     const shapeDiv = document.createElement('div');
 
     shapes.push(newShape);
-    shapeDiv.className = `shape ${shapeName}`;
+    shapeDiv.className = shapeName;
     shapeDiv.style.backgroundColor = colorName;
     shapeDiv.dataset.index = index; 
     shapeDiv.dataset.name = shapeName; 
@@ -77,7 +77,7 @@ function generateShape() {
     shapesObj.appendChild(shapeDiv);
 
     listen('click', shapeDiv, () => {
-        infoObj.textContent = newShape.getInfo();
+        messageObj.textContent = newShape.getInfo();
     });    
 
     verifyCapacity();
@@ -87,12 +87,12 @@ function verifyCapacity() {
     if (shapes.length >= CAPACITY) {
         generateObj.style.display = 'none';
         disableObj.style.display = 'block';
-        infoObj.textContent = CONTAINER_FULL;
+        messageObj.textContent = CONTAINER_FULL;
 
     } else {
         generateObj.style.display = 'block';
         disableObj.style.display = 'none';
-        infoObj.textContent = CONTAINER_EMPTY;
+        messageObj.textContent = CONTAINER_EMPTY;
     }
 }
 

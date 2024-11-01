@@ -24,13 +24,16 @@ main {
 }
 
 .container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+.flex {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: min(100% - 30px, 1080px);
-    margin-inline: auto;
+    justify-content: center;    
 }
 
 h1 {
@@ -105,6 +108,7 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    border-radius: 5px;
 }
 
 .shapes {

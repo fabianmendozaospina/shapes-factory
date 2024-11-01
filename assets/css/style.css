@@ -89,18 +89,6 @@ select {
     background-color: #ffaa00;
 }
 
-.disable-btn {
-    flex: 0 0 auto;
-    font-size: 12px;
-    height: 30px;
-    width: 124px;
-    background-color: #727272;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 .container-shapes {
     width: 385px;
     height: 385px;

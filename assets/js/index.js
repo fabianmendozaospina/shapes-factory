@@ -7,7 +7,6 @@ const CONTAINER_EMPTY = 'Please, choose the shape and color to put it in the con
 const shape = select('.shape');
 const color = select('.color');
 const generateObj = select('.create');
-const disableObj = select('.disable-btn');
 const shapesObj = select('.shapes');
 const messageObj = select('.message');
 const shapes = [];
@@ -85,13 +84,15 @@ function generateShape() {
 
 function verifyCapacity() {
     if (shapes.length >= CAPACITY) {
-        generateObj.style.display = 'none';
-        disableObj.style.display = 'block';
+        generateObj.style.backgroundColor = "#909090";
+        generateObj.disabled = true;
+        generateObj.style.cursor = "default";
         messageObj.textContent = CONTAINER_FULL;
 
     } else {
-        generateObj.style.display = 'block';
-        disableObj.style.display = 'none';
+        generateObj.style.backgroundColor = "#ff8800";
+        generateObj.disabled = false;
+        generateObj.style.cursor = "pointer";
         messageObj.textContent = CONTAINER_EMPTY;
     }
 }

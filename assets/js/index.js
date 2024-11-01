@@ -1,6 +1,6 @@
 'use strict';
 
-const CAPACITY = 30;
+const CAPACITY = 25;
 const CONTAINER_FULL = 'Sorry, the container is full. Please, refresh the page to empty it again.';
 const CONTAINER_EMPTY = 'Please, choose the shape and color to put it in the container.';
 

@@ -1,0 +1,136 @@
+@charset "utf-8";
+
+:root {
+    --app-blu: #09f;
+    --app-green: #9f0;
+    --app-orange: #f90;
+    --app-pink: #f09;
+    --app-purple: #90f;
+    --app-dark-gray: #141414;
+    --app-medium-gray: #2d2d2d;
+    --app-white: #fff;
+}
+  
+html {
+    min-width: 100%;
+}
+  
+body {
+    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    text-rendering: geometricPrecision;
+    background-color: var(--app-dark-gray);
+    overflow: auto;
+}
+
+main {
+    overflow: auto;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--app-white);
+    letter-spacing: 0.4px;
+    line-height: 2;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--app-white);
+    letter-spacing: 0.4px;
+    line-height: 2;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5px;
+    margin-bottom: 5px; 
+}
+
+select {
+    flex: 1;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: var(--app-medium-gray);
+    color: var(--app-white);
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.create {
+    flex: 0 0 auto;
+    height: 40px;
+    width: 150px;
+    background-color: #ff8800;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create:hover {
+    background-color: #ffaa00;
+}
+
+.disable-btn {
+    flex: 0 0 auto;
+    height: 40px;
+    width: 150px;
+    background-color: #727272;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container-output {
+    width: 640px;
+    height: 535px;
+    background-color: var(--app-medium-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.output {
+    max-width: 640px;
+    max-height: 560px;
+    align-self: left;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: auto; 
+    margin-left: 10px;
+}
+
+.circle {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    margin: 0 10px 10px 0;
+}
+
+.square {
+    width: 95px;
+    height: 95px;
+    border-radius: 0; 
+    margin: 0 10px 10px 0;
+}

@@ -54,7 +54,7 @@ p {
     line-height: 2;
 }
 
-.form-container {
+.container-options {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -100,7 +100,7 @@ select {
     cursor: pointer;
 }
 
-.container-output {
+.container-shapes {
     width: 640px;
     height: 535px;
     background-color: var(--app-medium-gray);
@@ -109,7 +109,7 @@ select {
     justify-content: flex-end;
 }
 
-.output {
+.shapes {
     max-width: 640px;
     max-height: 560px;
     align-self: left;

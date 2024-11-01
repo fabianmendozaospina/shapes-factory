@@ -1,13 +1,16 @@
 'use strict';
 
+const CAPACITY = 30;
+const CONTAINER_FULL = 'Sorry, the container is full. Please, refresh the page to empty it again.';
+const CONTAINER_EMPTY = 'Please, choose the shape and color to put it in the container.';
+
 const shape = select('.shape');
 const color = select('.color');
-const generateBtn = select('.create');
-const disableBtn = select('.disable-btn');
-const output = select('.output');
-const info = select('.info');
+const generateObj = select('.create');
+const disableObj = select('.disable-btn');
+const shapesObj = select('.shapes');
+const infoObj = select('.info');
 const shapes = [];
-const CAPACITY = 30;
 const colorMap = {
     "#09f": "Blue",
     "#9f0": "Green",
@@ -48,15 +51,20 @@ function listen(event, selector, callback) {
     return selector.addEventListener(event, callback);
 }
 
-listen('click', generateBtn, () => {
+listen('click', generateObj, () => {
     generateShape();
 });
 
 function generateShape() {
     const shapeName = shape.value;
     const colorName = color.value;
+
+    if (shapeName.toString().trim() === '' && colorName.toString().trim() === '') {
+        infoObj.textContent = CONTAINER_EMPTY;
+        return;
+    }
+
     const index = shapes.length;
-    
     const newShape = new Shape(index, shapeName, colorName);
     const shapeDiv = document.createElement('div');
 
@@ -66,26 +74,26 @@ function generateShape() {
     shapeDiv.dataset.index = index; 
     shapeDiv.dataset.name = shapeName; 
     shapeDiv.dataset.color = colorName;
-    output.appendChild(shapeDiv);
+    shapesObj.appendChild(shapeDiv);
 
-    shapeDiv.addEventListener('click', () => {
-        info.textContent = newShape.getInfo();
-    });
+    listen('click', shapeDiv, () => {
+        infoObj.textContent = newShape.getInfo();
+    });    
 
-    checkCapacity();
+    verifyCapacity();
 }
 
-function checkCapacity() {
+function verifyCapacity() {
     if (shapes.length >= CAPACITY) {
-        generateBtn.style.display = 'none';
-        disableBtn.style.display = 'block';
-        info.textContent = 'Sorry, the container is full. Please, refresh the page to empty it again.';
+        generateObj.style.display = 'none';
+        disableObj.style.display = 'block';
+        infoObj.textContent = CONTAINER_FULL;
 
     } else {
-        generateBtn.style.display = 'block';
-        disableBtn.style.display = 'none';
-        info.textContent = 'Please, choose the shape and color to generate it in the container.';
+        generateObj.style.display = 'block';
+        disableObj.style.display = 'none';
+        infoObj.textContent = CONTAINER_EMPTY;
     }
 }
 
-checkCapacity();
+verifyCapacity();

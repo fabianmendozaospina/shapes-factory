@@ -51,10 +51,10 @@ function listen(event, selector, callback) {
 }
 
 listen('click', generateObj, () => {
-    generateShape();
+    createShape();
 });
 
-function generateShape() {
+function createShape() {
     const shapeName = shapeObj.value;
     const colorName = colorObj.value;
 

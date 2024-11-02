@@ -4,6 +4,7 @@
     --app-dark-gray: #141414;
     --app-medium-gray: #2d2d2d;
     --app-white-color: #fff;
+    --app-orange: #ff8800;
     --app-dimension: 65px;
     --app-border-radius: 5px;
     
@@ -15,15 +16,7 @@
 
 body {
     font-family: 'Poppins', 'Open Sans', sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    text-rendering: geometricPrecision;
     background-color: var(--app-dark-gray);
-    overflow: auto;
-}
-
-main {
-    overflow: auto;
 }
 
 .container {
@@ -67,30 +60,26 @@ select {
     width: 137px;
     border-radius: var(--app-border-radius);
     padding: 4px 0  6px  10px;
-    box-sizing: border-box;
 }
 
 .create {
-    flex: 0 0 auto;
-    transition: background-color 0.3s ease;
     font-size: 12px;
     height: 30px;
     width: 90px;
-    background-color: #ff8800;
-    color: #ffffff;
-    border: none;
+    background-color: var(--app-orange);
+    color: var(--app-white-color);
     border-radius: var(--app-border-radius);
     cursor: pointer;
+    transition: all 0.25s ease-in-out; 
 }
 
 .create:hover {
-    background-color: #ffaa00;
+    color: var(--app-dark-gray);
 }
 
 .circle {
     width: var(--app-dimension);
     height: var(--app-dimension);
-    margin: 0 10px 10px 0;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -98,7 +87,6 @@ select {
 .square {
     width: var(--app-dimension);
     height: var(--app-dimension);
-    margin: 0 10px 10px 0;
     border-radius: var(--app-border-radius);
     cursor: pointer;
 }
@@ -106,7 +94,6 @@ select {
 .container-options {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     margin-bottom: 5px; 
     gap: 10px;
 }
@@ -123,11 +110,8 @@ select {
 }
 
 .shapes {
-    align-self: left;
     display: flex;
     flex-wrap: wrap-reverse;
-    justify-content: flex-start;
-    align-items: flex-end;       
-    margin-top: auto; 
-    margin-left: 10px; 
+    gap:10px;
+    margin: 10px; 
 }

@@ -63,7 +63,7 @@ function createShape() {
         return;
     }
 
-    const index = shapes.length;
+    let index = shapes.length;
     const newShape = new Shape(index, shapeName, colorName);
     const shapeDiv = document.createElement('div');
 
@@ -75,11 +75,14 @@ function createShape() {
     shapeDiv.dataset.color = colorName;
     shapesListObj.appendChild(shapeDiv);
 
-    listen('click', shapeDiv, () => {
-        messageObj.textContent = newShape.getInfo();
-    });    
-
+    addShapeClickListener(shapeDiv, newShape);
     verifyCapacity();
+}
+
+function addShapeClickListener(shapeDiv, newShape) { 
+    listen('click', shapeDiv, () => { 
+        messageObj.textContent = newShape.getInfo(); 
+    }); 
 }
 
 function verifyCapacity() {
